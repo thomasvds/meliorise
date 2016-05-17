@@ -1,4 +1,79 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+.feature-holder {
+  transition: 0.6s ease;
+  margin-bottom: 20px;
+  &:hover {
+    transition: 0.6s ease;
+  }
+  // height: 300px;
+}
+
+.special {
+  margin-left: 5px;
+}
+
+
+.feature {
+  padding: 20px 20px 10px 20px;
+  color: white;
+  margin-top: 10px;
+  // &:hover {
+  //   background-image: linear-gradient(-230deg, $primary-dark 35%, $primary 80%);
+  //   transition: 0.4s ease;
+  // }
+  h2 {
+    margin-top: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+
+.tagline {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color: $primary;
+  text-align: center;
+}
+
+.timelinewrapper {
+  padding-bottom: 0px;
+}
+
+.applybox {
+  background-image: linear-gradient(-200deg, $secondary 5%, $primary-light 80%);
+  color: white;
+
+  .question {
+    color: white;
+    // opacity: 0;
+  }
+
+    /* Navbar right button */
+    .btn-box {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .apply-btn {
+      margin-left: 10px;
+      padding: 0 20px;
+      border-radius: 5px;
+      line-height: 50px;
+      color: white;
+      font-size: 26px;
+      border: 2px solid white;
+    }
+    .apply-btn:hover {
+      color: $primary;
+      background-color: white;
+    }
+  }
+  .registerbox {
+    // background-color: $primary-light;
+    // background-image: linear-gradient(-230deg, $secondary 30%, $primary-light 80%);
+    color: $gray;
+  }

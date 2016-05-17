@@ -1,2 +1,237 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<script type="text/javascript">
+  // Navbar appearance, has to be loaded first
+  $('.navbar-wagon-link').addClass("unscrolled")
+  $('.navbar-wagon-button').addClass("unscrolled")
+  $('.navicon').addClass("unscrolled")
+  $('.navicon-small').addClass("unscrolled")
+</script>
+
+<!-- BANNER -->
+
+<div class="banner" style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.1) 5%, rgba(0,0,0,0.6) 90%), url(http://s3-eu-west-1.amazonaws.com/vrconfident/VRConfident+-+public+speaking+virtual+reality+banner+resized.jpg);">
+
+  <div class="banner-top"> </div>
+
+  <div class="banner-title text-center">
+    <h1 id="headline">WE'VE ALL BEEN THERE.</h1>
+  </div>
+
+  <div class="banner-description">
+    <p id="intro">Let's face it: public speaking can feel a bit scary at times. Now, what if Virtual Reality could help you train and boost your confidence?</p>
+  </div>
+
+  <div class="banner-bottom">
+    <div class="angle-down">
+      <i class="fa fa-angle-down" id="scrollarrow"></i>
+    </div>
+  </div>
+  <div class="scrollanchor" id="product"></div>
+
+</div>
+
+<!---         WHAT               -->
+<div class="wrapper">
+  <div class="applybox" style="position: relative;">
+    <div class="container text-center padded" >
+
+
+      <div class="tagline" style="color: white;"><h1>PUBLIC SPEAKING SKILLS TO THE NEXT LEVEL</h1></div>
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="feature-holder">
+            <div class="feature">
+              <%= image_tag("immersive experience.png") %>
+              <h2>LIVE AN IMMERSIVE EXPERIENCE</h2>
+              <p>With VRConfident, live virtual situations of public speaking, in a 3D 360° view.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="feature-holder">
+            <div class="feature">
+              <%= image_tag("test-runs.png") %>
+              <h2>ENJOY AS MANY TEST-RUNS AS YOU WANT</h2>
+              <p>The public won't even get tired of it, promised! They're virtual anyway.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="feature-holder">
+            <div class="feature">
+              <%= image_tag("experiment.png") %>
+              <h2>EXPERIMENT IT ALL TO GET CONFIDENT</h2>
+              <p>Train in all situations and settings. You'll finally deliver an incredible presentation!</p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <div style="position: absolute; bottom:70px;" id="howitworks"></div>
+  </div>
+
+  <div class="wrapper" style="position: relative">
+    <div class="container padded timelinewrapper">
+      <div class="tagline"><h1>IT'S AS EASY AS 1, 2, 3</h1></div>
+      <%= render 'pages/home/timeline' %>
+    </div>
+    <div style="position: absolute; bottom:70px;" id="features"></div>
+  </div>
+
+  <div class="wrapper">
+    <div class="applybox padded">
+      <div class="tagline" style="color: white;"><h1>PACKED WITH FEATURES TO MAKE YOU BETTER</h1></div>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-4" style="display:flex; justify-content: space-around;">
+            <div class='package'>
+              <div class='name'>Good</div>
+              <div class='price'>€10 / month*</div>
+              <div class='trial'>Individuals - free trial</div>
+
+              <ul>
+                <li>
+                  <strong>3</strong>
+                  standard scenes
+                </li>
+                <li>
+                  <strong>Unlimited</strong>
+                  number of runs
+                </li>
+                <li>
+                  <strong>Basic analytics</strong>
+                  tool suite
+                </li>
+                <li>
+                  <strong>1</strong>
+                  user
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4" style="display:flex; justify-content: space-around;">
+            <div class='package brilliant'>
+              <div class='name'>Awesome</div>
+              <div class='price'>€200 / per week*</div>
+              <div class='trial'>Business - free trial</div>
+              <ul>
+                <li>
+                  <strong>5</strong>
+                  standard scenes
+                </li>
+                <li>
+                  <strong>Unlimited</strong>
+                  number of users
+                </li>
+                <li>
+                  <strong>Unlimited</strong>
+                  number of runs
+                </li>
+                <li>
+                  <strong>Virtual Reality</strong>
+                  headset
+                </li>
+                <li>
+                  <strong>Full analytics</strong>
+                  tools suite
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4" style="display:flex; justify-content: space-around;">
+            <div class='package'>
+              <div class='name'>Epic</div>
+              <div class='price'>Price on request*</div>
+              <div class='trial'>Business - free trial</div>
+
+              <ul>
+                <li>
+                  <strong>All 'Awesome'</strong>
+                  features
+                </li>
+                <li>
+                  <strong>Custom</strong>
+                  speaking scenes
+                </li>
+                <li>
+                  <strong>Custom </strong>support
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper" id="testit">
+    <div class="registerbox padded">
+      <div class="tagline"><h1>REGISTER NOW, BE IN THE KNOW</h1></div>
+      <div class="text-center" style="font-size: 18px;">You'll get to know about our latest product evolutions. Psst: you might also be the first to get your free trial!</div>
+      <br>
+      <div class="container">
+
+        <div class='form text-center'>
+
+          <%= simple_form_for @lead, :html => {:class => 'form-inline' }, url: register_path, method: :put do |f| %>
+          <%= f.input :name, label: 'Name', input_html: { class: 'special' }  %>
+          &nbsp;
+          <%= f.input :email, :required => true, input_html: { class: 'special' }  %>
+          &nbsp;
+          <%= f.input :business, label: '  I am a business' %>
+          <div>
+          </br>
+          <%= f.button :submit, 'REGISTER!', :class=> "btn btn-primary" %>
+          </div>
+          <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+<% content_for :javascript do %>
+<script>
+
+  // Title dynamic resizing
+  $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
+  $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '22px' });
+
+  // Banner downarrow effects
+  $("#scrollarrow").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#product").offset().top
+    }, 1500);
+  });
+  function pulse(){
+    if($(window).scrollTop() < 100) {
+      $("#scrollarrow").animate({fontSize: "+=15"}, 700);
+      $("#scrollarrow").animate({fontSize: "-=15"}, 700).delay(3000);
+    }
+  }
+  setInterval(pulse, 3000);
+
+  $(".package").hover(function(){
+    $(".package").removeClass("brilliant");
+    $(this).toggleClass("brilliant");
+  });
+
+</script>
+<% end %>
+
+
+
+
+
+
