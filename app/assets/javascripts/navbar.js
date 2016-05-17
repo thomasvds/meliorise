@@ -1,14 +1,14 @@
 $(window).on('scroll', function(e){
   if ($(this).scrollTop() > 100) {
-    $('.navbar-wagon').addClass("is-scrolling")
-    $('.navbar-wagon-link').removeClass("unscrolled")
-    $('.navbar-wagon-button').removeClass("unscrolled")
+    $('.mynavbar').addClass("is-scrolling")
+    $('.navbar-link').removeClass("unscrolled")
+    $('.navbar-button').removeClass("unscrolled")
     $('.navicon').removeClass("unscrolled")
     $('.navicon-small').removeClass("unscrolled")
   } else {
-    $('.navbar-wagon').removeClass("is-scrolling")
-    $('.navbar-wagon-link').addClass("unscrolled")
-    $('.navbar-wagon-button').addClass("unscrolled")
+    $('.mynavbar').removeClass("is-scrolling")
+    $('.navbar-link').addClass("unscrolled")
+    $('.navbar-button').addClass("unscrolled")
     $('.navicon').addClass("unscrolled")
     $('.navicon-small').addClass("unscrolled")
   }

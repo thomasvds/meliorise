@@ -1,86 +1,38 @@
+<!-- FRONTLOADING OF NAVBAR JAVASCRIPT -->
 <script type="text/javascript">
-  // Navbar appearance, has to be loaded first
-  $('.navbar-wagon-link').addClass("unscrolled")
-  $('.navbar-wagon-button').addClass("unscrolled")
+  $('.navbar-link').addClass("unscrolled")
+  $('.navbar-button').addClass("unscrolled")
   $('.navicon').addClass("unscrolled")
   $('.navicon-small').addClass("unscrolled")
 </script>
 
-<!-- BANNER -->
-
+<!-- INTRO BANNER -->
 <div class="banner" style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.08) 5%, rgba(0,0,0,0.2) 90%), url(http://s3.eu-central-1.amazonaws.com/meliorise/selfimprovement-donation-banner4_small.jpeg);">
-
-  <div class="banner-top"> </div>
-
-  <div class="banner-title text-center">
-    <h1 id="headline">MAKE YOURSELF AND THE WORLD BETTER.</h1>
-  </div>
-
-  <div class="banner-description">
-    <p id="intro">Discover Meliorise, the self-improvement coach with a motivation engine that lets you support causes you care for</p>
-  </div>
-
-  <div class="banner-bottom">
-    <div class="angle-down">
-      <i class="fa fa-angle-down" id="scrollarrow"></i>
-    </div>
-  </div>
-  <div class="scrollanchor" id="product"></div>
-
+  <%= render 'pages/home/banner' %>
+  <div class="scrollanchor" id="discover"></div>
 </div>
 
-<!---         WHAT               -->
-<div class="wrapper value-proposition">
+<!-- DISCOVER -->
+<div class="wrapper discover-section">
   <div style="position: relative;">
     <div class="text-center padded" >
-
-
-      <div class="tagline""><h1>SELF-IMPROVEMENT, THE GENEROUS WAY</h1></div>
-      <div class="row">
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="feature-holder">
-            <div class="feature">
-              <%= image_tag("goodresolutions.png") %>
-              <h2>FROM GOOD RESOLUTIONS TO ACTION</h2>
-              <p>Wishing is not enough. To improve yourself, Meliorise helps you set and track meaningful personal objectives. It's a fact: what is measured, improves.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="feature-holder">
-            <div class="feature">
-              <%= image_tag("incentivize.png") %>
-              <h2>PUT A LITTLE STAKE IN THE GAME</h2>
-              <p>It's easier to reach your objectives if you incentivize yourself. With Meliorise, lock an amount you'll retrieve at achievement, proportionally to your success.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="feature-holder">
-            <div class="feature">
-              <%= image_tag("betterworld.png") %>
-              <h2>THE TWEAK FOR A BETTER WORLD</h2>
-              <p>Here comes the tweak: the rest of the amount is donated to a nonprofit of your choice...so the world gets better anyway, through you or through them!</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="tagline""><h1>SELF-IMPROVEMENT, GENEROUSLY</h1></div>
+      <%= render 'pages/home/discover' %>
     </div>
     <div style="position: absolute; bottom:70px;" id="howitworks"></div>
   </div>
 </div>
 
-<div class="how-it-works" style="position: relative">
+<!-- HOW IT WORKS -->
+<div class="how-it-works-section" style="position: relative">
   <div class="container padded timelinewrapper">
-    <div class="tagline"><h1>MELIORISE MAKES IT EASY</h1></div>
-    <%= render 'pages/home/timeline' %>
+    <div class="tagline"><h1>MELIORISE REVEALS THE BETTER YOU</h1></div>
+    <%= render 'pages/home/howitworks' %>
   </div>
   <div style="position: absolute; bottom:70px;" id="examples"></div>
 </div>
 
+<!-- EXAMPLES -->
 <div style="position: relative; background-image: linear-gradient(-200deg, rgba(0,0,0,0.1) 5%, rgba(0,0,0,0.4) 90%), url(http://s3.eu-central-1.amazonaws.com/meliorise/blurred-examples.jpg);">
   <div class="container padded">
     <div class="tagline"><h1>EXAMPLES</h1></div>
@@ -88,47 +40,25 @@
   </div>
   <div style="position: absolute; bottom:70px;" id="features"></div>
 </div>
-</div>
 
-
+<!-- CALL TO ACTION -->
 <div class="wrapper" id="testit">
   <div class="registerbox padded">
     <div class="tagline"><h1>JOIN NOW, BE IN THE KNOW</h1></div>
-    <div class="text-center" style="font-size: 18px;">At Betterise, we believe in the potential of every person to improve and get happier. We believe that happier individuals contribute to a better world as much as dedicated organizations, and that they can reward themselves for it!</div>
-    <br>
-    <div class="container">
-
-      <div class='form text-center'>
-
-        <%= simple_form_for @lead, :html => {:class => 'form-inline' }, url: register_path, method: :put do |f| %>
-        <%= f.input :name, label: 'Name', input_html: { class: 'special' }  %>
-        &nbsp;
-        <%= f.input :email, :required => true, input_html: { class: 'special' }  %>
-        &nbsp;
-        <div>
-        </br>
-        <%= f.button :submit, 'JOIN!', :class=> "btn btn-primary" %>
-      </div>
-      <% end %>
-    </div>
-
+    <%= render 'pages/home/calltoaction' %>
   </div>
 </div>
-</div>
-</div>
 
-
+<!-- AFTERLOADING OF PAGE JAVASCRIPT -->
 <% content_for :javascript do %>
 <script>
-
   // Title dynamic resizing
   $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
   $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '22px' });
-
   // Banner downarrow effects
   $("#scrollarrow").click(function() {
     $('html, body').animate({
-      scrollTop: $("#product").offset().top
+      scrollTop: $("#discover").offset().top
     }, 1500);
   });
   function pulse(){
@@ -138,17 +68,5 @@
     }
   }
   setInterval(pulse, 3000);
-
-  $(".package").hover(function(){
-    $(".package").removeClass("brilliant");
-    $(this).toggleClass("brilliant");
-  });
-
 </script>
 <% end %>
-
-
-
-
-
-

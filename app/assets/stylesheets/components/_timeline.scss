@@ -1,9 +1,14 @@
 
 /* --------------------------------
 
-TIMELINE ELEMENTS
+ALL "TIMELINE" ELEMENTS (HOW IT WORKS SECTION)
 
 -------------------------------- */
+
+.timelinewrapper {
+  padding-bottom: 0px;
+}
+
 #cd-timeline {
   position: relative;
   padding: 2em 0;
@@ -80,7 +85,7 @@ TIMELINE ELEMENTS
     margin-left: -12px;
     margin-top: -12px;
   }
-  .playlogo {
+  .tracker {
     left: 33%
   }
 }
@@ -209,6 +214,7 @@ TIMELINE ELEMENTS
 .cd-timeline-content h2 {
   color: $primary-dark;
   font-size: 26px;
+  font-weight: 500;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 16px;
@@ -221,6 +227,7 @@ TIMELINE ELEMENTS
 .cd-timeline-content p {
   margin: 1em 0;
   line-height: 1.6;
+  margin-bottom: 0px;
 }
 
 .cd-timeline-content::before {
@@ -236,11 +243,13 @@ TIMELINE ELEMENTS
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
     font-size: 26px;
+    font-weight: 500;
     // font-size: 1.25rem;
   }
   .cd-timeline-content p {
     font-size: 16px;
     color: $gray-light;
+    margin-bottom: 0px;
     // font-size: 1rem;
   }
   .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {

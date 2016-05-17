@@ -1,0 +1,16 @@
+<div class="text-center" style="font-size: 18px;">At Betterise, we believe in the potential of every person to improve and get happier. We believe that happier individuals contribute to a better world as much as dedicated organizations, and that they can reward themselves for it!</div>
+<br>
+<div class="container">
+  <div class='form text-center'>
+    <%= simple_form_for @lead, :html => {:class => 'form-inline' }, url: register_path, method: :put do |f| %>
+    <%= f.input :name, label: 'Name', input_html: { class: 'special' }  %>
+    &nbsp;
+    <%= f.input :email, :required => true, input_html: { class: 'special' }  %>
+    &nbsp;
+    <div>
+      </br>
+      <%= f.button :submit, 'JOIN!', :class=> "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>
