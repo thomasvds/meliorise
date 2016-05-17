@@ -7,7 +7,6 @@
 
 .discover-section {
   background-color: white;
-  color: gray;
   padding-left: 10px;
   padding-right: 10px;
 
@@ -19,9 +18,11 @@
       margin-top: 15px;
       letter-spacing: 1px;
       font-weight: 500;
+      color: gray;
     }
     p {
       font-size: 18px;
+      color: $gray-light;
     }
     img {
       height: 150px;
@@ -31,6 +32,12 @@
 
 .how-it-works-section {
   background-image: linear-gradient(-230deg, $primary 40%, $primary-light 80%);
+  .tagline {
+    color: white;
+  }
+}
+
+.examples-section {
   .tagline {
     color: white;
   }
